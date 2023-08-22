@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITOLO PAGE -->
-    <title>Template</title>
+    <title>MY-PERSONAL-WB</title>
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,38 +21,31 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/framework.css">
-    <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="css/mediaquery.css">
     <link rel="stylesheet" href="css/style.css">
 
     
 </head>
 <body id="debug">
 
+    <?php 
+    
+            //VARIABILI
+            $paragraph = $_GET["paragraph"];
+            $wordToCensor = $_GET["word"];
+            //----------------------------------------------------
+            // PAROLA INSERITA
+            echo "<h2>Parola Inserita:</h2>";
+            echo "<p>" . $paragraph . "</p>";
+            echo "<p>Lunghezza: " . strlen($paragraph) . " caratteri</p>";
+            //VARIABILE PER CENSURARE
+            $censoredParagraph = str_replace($wordToCensor, str_repeat('*', strlen($wordToCensor)), $paragraph);
 
-
-
-    <!-- HEADER -->
-    <header>
-        HEADER
-    </header>
-
-
-
-    <!-- MAIN -->
-    <main>
-        MAIN
-    </main>
-
-
-
-    <!-- FOOTER -->
-    <footer>
-        FOOTER
-    </footer>
-
-
+            //PAROLA DA CENSURARE
+            echo "<h2>Parola Censurata:</h2>";
+            echo "<p>" . $censoredParagraph . "</p>";
+            echo "<p>Lunghezza: " . strlen($censoredParagraph) . " caratteri e " . strlen($wordToCensor) . " parole censurate</p>";
+        ?>
+    </div>
 
 
     <!-- JS SCRIPT.JS -->
